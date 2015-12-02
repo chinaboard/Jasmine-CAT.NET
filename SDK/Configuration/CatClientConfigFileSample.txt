@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MonitorClientConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Domain id="CatClient_Tests" ip="10.0.21.135" enabled="true" />
+  <Servers>
+    <!--<Server ip="10.0.21.135" port="2280" enabled="true" />-->
+
+    <Server ip="10.0.21.2" port="2280" enabled="true" />
+
+    <Server ip="10.0.21.3" port="2280" enabled="true" />
+    <Server ip="10.0.21.4" port="2280" enabled="true" />
+  </Servers>
+</MonitorClientConfig>

@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C05B1940-6218-4E9C-87B3-6CBA30935B5F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CAT</RootNamespace>
+    <AssemblyName>CAT</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Context\HttpCallContext.cs" />
+    <Compile Include="Jasmine.cs" />
+    <Compile Include="JasmineConstants.cs" />
+    <Compile Include="Configuration\JasmineSetting.cs" />
+    <Compile Include="Configuration\Domain.cs" />
+    <Compile Include="Configuration\Server.cs" />
+    <Compile Include="Context\CallContextManager.cs" />
+    <Compile Include="Context\CatContext.cs" />
+    <Compile Include="Context\ContextBase.cs" />
+    <Compile Include="Context\DefaultCallContext.cs" />
+    <Compile Include="Context\RemotionCallContext.cs" />
+    <Compile Include="Log\DefaultLogger.cs" />
+    <Compile Include="Log\ILog.cs" />
+    <Compile Include="Log\LoggerManager.cs" />
+    <Compile Include="Message\IEvent.cs" />
+    <Compile Include="Message\IHeartbeat.cs" />
+    <Compile Include="Message\IMessage.cs" />
+    <Compile Include="Message\IMessageTree.cs" />
+    <Compile Include="Message\IMetric.cs" />
+    <Compile Include="Message\Internals\AbstractMessage.cs" />
+    <Compile Include="Message\Internals\DefaultEvent.cs" />
+    <Compile Include="Message\Internals\DefaultHeartbeat.cs" />
+    <Compile Include="Message\Internals\DefaultMessageTree.cs" />
+    <Compile Include="Message\Internals\DefaultMetric.cs" />
+    <Compile Include="Message\Internals\DefaultTransaction.cs" />
+    <Compile Include="Message\Internals\MessageId.cs" />
+    <Compile Include="Message\Internals\NullEvent.cs" />
+    <Compile Include="Message\Internals\NullHeartbeat.cs" />
+    <Compile Include="Message\Internals\NullMetric.cs" />
+    <Compile Include="Message\Internals\NullTransaction.cs" />
+    <Compile Include="Message\ITransaction.cs" />
+    <Compile Include="Message\Spi\Codec\ChannelBuffer.cs" />
+    <Compile Include="Message\Spi\Codec\IMessageCodec.cs" />
+    <Compile Include="Message\Spi\Codec\PlainTextMessageCodec.cs" />
+    <Compile Include="Message\Spi\HeartBeat\DiskInfo.cs" />
+    <Compile Include="Message\Spi\HeartBeat\Extend\CpuInfo.cs" />
+    <Compile Include="Message\Spi\HeartBeat\Extend\DiskIO.cs" />
+    <Compile Include="Message\Spi\HeartBeat\Extend\NetworkIO.cs" />
+    <Compile Include="Message\Spi\HeartBeat\GCInfo.cs" />
+    <Compile Include="Message\Spi\HeartBeat\Extend\HeartbeatExtention.cs" />
+    <Compile Include="Message\Spi\HeartBeat\IRefresh.cs" />
+    <Compile Include="Message\Spi\HeartBeat\MemoryInfo.cs" />
+    <Compile Include="Message\Spi\HeartBeat\MessageInfo.cs" />
+    <Compile Include="Message\Spi\HeartBeat\OSInfo.cs" />
+    <Compile Include="Message\Spi\HeartBeat\RuntimeInfo.cs" />
+    <Compile Include="Message\Spi\HeartBeat\NodeStatusInfo.cs" />
+    <Compile Include="Message\Spi\HeartBeat\ThreadInfo.cs" />
+    <Compile Include="Message\Spi\IMessageManager.cs" />
+    <Compile Include="Message\Spi\IMessageProducer.cs" />
+    <Compile Include="Message\Spi\IMessageStatistics.cs" />
+    <Compile Include="Message\Spi\Internals\DefaultMessageManager.cs" />
+    <Compile Include="Message\Spi\Internals\DefaultMessageProducer.cs" />
+    <Compile Include="Message\Spi\Internals\DefaultMessageStatistics.cs" />
+    <Compile Include="Message\Spi\Internals\MessageIdFactory.cs" />
+    <Compile Include="Message\Spi\Internals\StatusUpdateTask.cs" />
+    <Compile Include="Message\Spi\IO\IMessageSender.cs" />
+    <Compile Include="Message\Spi\IO\TcpMessageSender.cs" />
+    <Compile Include="Message\ThreadContext\JasmineContext.cs" />
+    <Compile Include="Message\ThreadContext\JasmineThreadLocal.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\AppEnv.cs" />
+    <Compile Include="Util\JsonSerializer.cs" />
+    <Compile Include="Util\Logger.cs" />
+    <Compile Include="Util\MilliSecondTimer.cs" />
+    <Compile Include="Util\NetworkInterfaceManager.cs" />
+    <Compile Include="Util\NetworkUtil.cs" />
+    <Compile Include="Util\XmlHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Configuration\CatClientConfigFileSample.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
