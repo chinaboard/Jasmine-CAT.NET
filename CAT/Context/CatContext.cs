@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Framework.Zhaogang.Cat.Context
+namespace Cat.Context
 {
     public class CatContext : ContextBase
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Framework.Zhaogang.Cat.Context
+namespace Cat.Context
 {
     public abstract class ContextBase
     {
